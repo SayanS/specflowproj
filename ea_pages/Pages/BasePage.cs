@@ -2,6 +2,7 @@
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
+using System.Security.Policy;
 using System.Text;
 
 namespace ea_pages.Pages
@@ -14,6 +15,11 @@ namespace ea_pages.Pages
         {
             _webDriver = webDriver;
             PageFactory.InitElements(_webDriver, this);
+        }
+
+        public string GetUrl()
+        {
+            return  _webDriver.Url;
         }
     }
 }

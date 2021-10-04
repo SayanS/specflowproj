@@ -11,8 +11,7 @@ namespace ea_tests
     {
 
         private readonly LoginPage _loginPage;
-        public UserFormPage userFormPage;
-
+        
         public LoginSteps(LoginPage loginPage)
         {
             _loginPage = loginPage;
@@ -35,13 +34,7 @@ namespace ea_tests
         [When(@"I click login button")]
         public void WhenIClickLoginButton()
         {
-           userFormPage=_loginPage.ClickOnLoginBtn();
-        }
-        
-        [Then(@"I should see the EA page")]
-        public void ThenIShouldSeeTheEAPage()
-        {
-            Assert.That(userFormPage.GetPageTitle(),Is.EqualTo("MMM"),"Wrong title for DashBoard page");
+           _loginPage.ClickOnLoginBtn();
         }
     }
 }
